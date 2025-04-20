@@ -1,0 +1,42 @@
+[
+  {
+    "roomNumber": "101",
+    "capacity": 100,
+    "type": "AMFITEATRU"
+  },
+  {
+    "roomNumber": "102",
+    "capacity": 30,
+    "type": "SALA_SEMINAR"
+  },
+  {
+    "roomNumber": "201",
+    "capacity": 25,
+    "type": "LABORATOR"
+  },
+  {
+    "roomNumber": "202",
+    "capacity": 25,
+    "type": "LABORATOR"
+  },
+  {
+    "roomNumber": "301",
+    "capacity": 150,
+    "type": "AMFITEATRU"
+  },
+  {
+    "roomNumber": "302",
+    "capacity": 40,
+    "type": "SALA_SEMINAR"
+  },
+  {
+    "roomNumber": "303",
+    "capacity": 35,
+    "type": "SALA_SEMINAR"
+  },
+  {
+    "roomNumber": "401",
+    "capacity": 30,
+    "type": "LABORATOR"
+  }
+] 

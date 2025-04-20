@@ -1,0 +1,42 @@
+[
+  {
+    "name": "A1",
+    "year": 1,
+    "numberOfStudents": 30
+  },
+  {
+    "name": "A2",
+    "year": 1,
+    "numberOfStudents": 25
+  },
+  {
+    "name": "B1",
+    "year": 2,
+    "numberOfStudents": 20
+  },
+  {
+    "name": "B2",
+    "year": 2,
+    "numberOfStudents": 22
+  },
+  {
+    "name": "C1",
+    "year": 3,
+    "numberOfStudents": 18
+  },
+  {
+    "name": "C2",
+    "year": 3,
+    "numberOfStudents": 15
+  },
+  {
+    "name": "D1",
+    "year": 4,
+    "numberOfStudents": 12
+  },
+  {
+    "name": "D2",
+    "year": 4,
+    "numberOfStudents": 10
+  }
+] 
