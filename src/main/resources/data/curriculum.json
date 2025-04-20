@@ -1,0 +1,300 @@
+{
+  "year_1": {
+    "semester_1": [
+      {
+        "name": "Structuri Algebrice în Informatică",
+        "type": "DF",
+        "hours": { "C": 2, "S": 2, "L": 0, "P": 0 },
+        "exam": "E",
+        "credits": 4
+      },
+      {
+        "name": "Analiză Matematică",
+        "type": "DF",
+        "hours": { "C": 3, "S": 2, "L": 0, "P": 0 },
+        "exam": "E",
+        "credits": 6
+      },
+      {
+        "name": "Tehnici Web",
+        "type": "DS",
+        "hours": { "C": 2, "S": 2, "L": 0, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Programarea Algoritmilor",
+        "type": "DF",
+        "hours": { "C": 2, "S": 1, "L": 2, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Arhitectura Sistemelor de Calcul",
+        "type": "DF",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 4
+      },
+      {
+        "name": "Instrumente și Tehnici de Bază în Informatică",
+        "type": "DS",
+        "hours": { "C": 1, "S": 1, "L": 2, "P": 0  },
+        "exam": "V",
+        "credits": 4
+      },
+      {
+        "name": "Limbă Străină 1",
+        "type": "DC",
+        "hours": { "C": 0, "S": 1, "L": 0, "P": 0 },
+        "exam": "V",
+        "credits": 2
+      },
+      {
+        "name": "Educație Fizică",
+        "type": "DC",
+        "hours": { "C": 0, "S": 1, "L": 0, "P": 0 },
+        "exam": "V",
+        "credits": 2
+      }
+    ],
+    "semester_2": [
+      {
+        "name": "Geometrie și Algebră Liniară",
+        "type": "DC",
+        "hours": { "C": 2, "S": 2, "L": 0, "P": 0 },
+        "exam": "E",
+        "credits": 4
+      },
+      {
+        "name": "Baze de Date",
+        "type": "DF",
+        "hours": { "C": 2, "S": 2, "L": 0, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Structuri de Date",
+        "type": "DF",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Limbaje Formale și Automate",
+        "type": "DF",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 4
+      },
+      {
+        "name": "Programare Orientată pe Obiecte",
+        "type": "DS",
+        "hours": { "C": 3, "S": 1, "L": 2, "P": 0 },
+        "exam": "E",
+        "credits": 6
+      },
+      {
+        "name": "Logică Matematică și Computațională",
+        "type": "DF",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 4
+      },
+      {
+        "name": "Limbă Străină 2",
+        "type": "DC",
+        "hours": { "C": 0, "S": 1, "L": 0, "P": 0 },
+        "exam": "V",
+        "credits": 2
+      },
+      {
+        "name": "Educație Fizică",
+        "type": "DC",
+        "hours": { "C": 0, "S": 1, "L": 0, "P": 0 },
+        "exam": "V",
+        "credits": 2
+      }
+    ]
+  },
+  "year_2": {
+    "semester_1": [
+      {
+        "name": "Algoritmi Avansați",
+        "type": "DF",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Programare Funcțională",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Inteligență Artificială",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Rețele de Calculatoare",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Sisteme de Operare",
+        "type": "DF",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Probabilități și Statistică",
+        "type": "DC",
+        "hours": { "C": 2, "S": 2, "L": 0, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      }
+    ],
+    "semester_2": [
+      {
+        "name": "Metode de Dezvoltare Software",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Învățare Automată",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Grafică pe Calculator",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Securitatea Sistemelor Informatice",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Proiectarea Bazelor de Date",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Tehnici de Verificare și Validare",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      }
+    ]
+  },
+  "year_3": {
+    "semester_1": [
+      {
+        "name": "Calcul Paralel și Distribuit",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Ingineria Sistemelor Software",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Programare Avansată",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Pregătirea Lucrării de Licență",
+        "type": "DS",
+        "hours": { "C": 0, "S": 0, "L": 0, "P": 4 },
+        "exam": "V",
+        "credits": 5
+      },
+      {
+        "name": "Disciplină Opțională 1",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Disciplină Opțională 2",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      }
+    ],
+    "semester_2": [
+      {
+        "name": "Cercetare pentru Lucrarea de Licență",
+        "type": "DS",
+        "hours": { "C": 0, "S": 0, "L": 0, "P": 10 },
+        "exam": "V",
+        "credits": 10
+      },
+      {
+        "name": "Etică și Integritate Academică",
+        "type": "DC",
+        "hours": { "C": 2, "S": 1, "L": 0, "P": 0 },
+        "exam": "V",
+        "credits": 3
+      },
+      {
+        "name": "Practica de Specialitate",
+        "type": "DS",
+        "hours": { "C": 0, "S": 0, "L": 0, "P": 4 },
+        "exam": "V",
+        "credits": 4
+      },
+      {
+        "name": "Disciplină Opțională 3",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Disciplină Opțională 4",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      },
+      {
+        "name": "Disciplină Opțională 5",
+        "type": "DS",
+        "hours": { "C": 2, "S": 1, "L": 1, "P": 0 },
+        "exam": "E",
+        "credits": 5
+      }
+    ]
+  }
+}
