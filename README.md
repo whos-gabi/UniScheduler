@@ -42,20 +42,20 @@ Proiect Pentru Materia PAOJ (Programare Avansata pe Obiecte in Java)
 
 ### Servicii implementate
 1. ProfessorService - gestionarea profesorilor
-2. RoomService - gestionarea sălilor
-3. StudentGroupService - gestionarea grupelor de studenți
+2. RoomService - gestionarea salilor
+3. StudentGroupService - gestionarea grupelor de studenti
 4. TimetableService - gestionarea orarului
 
-### Acțiuni/Interogări implementate
-1. Adăugare profesor nou în sistem
-2. Căutare profesor după ID
-3. Căutare profesori după nume
-4. Căutare profesori după departament
+### Actiuni/Interogari implementate
+1. Adaugare profesor nou in sistem
+2. Cautare profesor dupa ID
+3. Cautare profesori dupa nume
+4. Cautare profesori dupa departament
 5. Actualizare detalii profesor
 6. Programare cursuri în orar
-7. Verificare disponibilitate sală la o anumită oră
-8. Generare orar pentru o grupă de studenți
-9. Afișare cursuri ale unui profesor
-10. Verificare suprapuneri pentru cursuri online pe aceeași platformă
+7. Verificare disponibilitate sala la o anumita ora
+8. Generare orar pentru o grupa de studenți
+9. Afisare cursuri ale unui profesor
+10. Verificare suprapuneri pentru cursuri online pe aceeasi platforma
 
 
