@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="774be6d4-a383-4617-99b2-de3259031dd4" name="Changes" comment="Initialized project">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="774be6d4-a383-4617-99b2-de3259031dd4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/resources/data/input1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/Professor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/ScheduleEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/StudentGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/Timetable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/enums/RoomType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/enums/WeekType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/service/TimetableService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/util/JSONHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/output/sample.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/src.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unischedule/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,15 +29,35 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "whos-gabi"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/whos-gabi/UniScheduler-TimetableSystem.git",
+    "accountId": "b1ea783e-0b37-474d-95a6-51704a8e2857"
+  }
+}]]></component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="3HlRy04X" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2uJPa7hKh76teq6ARYdIDPs2eHt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -34,6 +67,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -43,10 +77,17 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/resources" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
   </component>
@@ -66,7 +107,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741963765086</updated>
-      <workItem from="1741963766281" duration="910000" />
+      <workItem from="1741963766281" duration="1560000" />
+      <workItem from="1745077331891" duration="8268000" />
     </task>
     <task id="LOCAL-00001" summary="Initialized project">
       <option name="closed" value="true" />

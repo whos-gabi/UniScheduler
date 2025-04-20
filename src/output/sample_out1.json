@@ -1,0 +1,43 @@
+{
+  "group": "INFO141",
+  "schedule": {
+    "Tuesday": {
+      "8:00": [],
+      "10:00": [
+        {
+          "type": "Curs",
+          "subject": "POO",
+          "professor": "Paun A",
+          "room": "Haret",
+          "weekType": "ALL",
+          "subgroup": null,
+          "weekRange": "1-14"
+        }
+      ],
+      "12:00": [
+        {
+          "type": "Curs",
+          "subject": "BD",
+          "professor": "BanuDem. I",
+          "room": "Haret",
+          "weekType": "ALL",
+          "subgroup": null,
+          "weekRange": "1-14"
+        }
+      ]
+    },
+    "Wednesday": {
+      "8:00": [
+        {
+          "type": "Lab",
+          "subject": "StructDate",
+          "professor": "Marinescu R",
+          "room": "L.221A",
+          "weekType": "SI",
+          "subgroup": "Grupa 1",
+          "weekRange": "1-14"
+        }
+      ]
+    }
+  }
+}
