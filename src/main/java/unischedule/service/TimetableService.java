@@ -3,9 +3,9 @@ package unischedule.service;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import unischedule.model.Course;
+import unischedule.model.OnlineCourse;
 import unischedule.model.Professor;
 import unischedule.model.Room;
 import unischedule.model.Schedulable;
@@ -45,13 +45,21 @@ public class TimetableService {
             return false;
         }
         
-        // Book the time slot for all resources
-        room.bookTimeSlot(timeSlot);
+        // book
+        if (room != null) {
+            room.bookTimeSlot(timeSlot);
+        }
         course.getProfessor().bookTimeSlot(timeSlot);
         group.bookTimeSlot(timeSlot);
         
-        // Add entry to timetable
         timetable.addEntry(entry);
+        
+        //  handling OnlineCourse
+        if (course instanceof OnlineCourse) {
+            System.out.println("Curs online programat: " + course.getName() + 
+                    " pe platforma " + ((OnlineCourse)course).getPlatformName());
+        }
+        
         return true;
     }
     
@@ -71,7 +79,7 @@ public class TimetableService {
         List<Room> rooms = new ArrayList<>();
         for (ScheduleEntry entry : timetable.getEntries().values()) {
             Room room = entry.getRoom();
-            if (room.getCapacity() >= minCapacity && room.isAvailable(timeSlot)) {
+            if (room != null && room.getCapacity() >= minCapacity && room.isAvailable(timeSlot)) {
                 rooms.add(room);
             }
         }
@@ -96,12 +104,6 @@ public class TimetableService {
         }
         
         return availableSlots;
-    }
-    
-    public List<ScheduleEntry> getEntriesForDay(DayOfWeek day) {
-        return timetable.getEntries().values().stream()
-                .filter(entry -> entry.getTimeSlot().getDay().equals(day))
-                .collect(Collectors.toList());
     }
     
     public void displayTimetable() {

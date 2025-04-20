@@ -1,69 +1,81 @@
 package unischedule.model;
 
+/**
+ * Intrare in orar
+ */
 public class ScheduleEntry {
-    private String type; // "Curs", "Lab", "Seminar"
-    private String subject;
-    private String professor;
-    private String room;
-    private String weekType; // "SI", "SP", "ALL"
-    private String subgroup; // null sau "Grupa 1"/"Grupa 2"
-    private String weekRange; // "1-14", "1-7", etc.
+    private Course course;
+    private Room room;
+    private StudentGroup studentGroup;
+    private TimeSlot timeSlot;
 
+    public ScheduleEntry() {}
 
-    public String getType() {
-        return type;
+    public ScheduleEntry(Course course, Room room, StudentGroup studentGroup, TimeSlot timeSlot) {
+        this.course = course;
+        this.room = room;
+        this.studentGroup = studentGroup;
+        this.timeSlot = timeSlot;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public Course getCourse() {
+        return course;
     }
 
-    public String getSubject() {
-        return subject;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getProfessor() {
-        return professor;
-    }
-
-    public void setProfessor(String professor) {
-        this.professor = professor;
-    }
-
-    public String getRoom() {
+    public Room getRoom() {
         return room;
     }
 
-    public void setRoom(String room) {
+    public void setRoom(Room room) {
         this.room = room;
     }
 
-    public String getWeekType() {
-        return weekType;
+    public StudentGroup getStudentGroup() {
+        return studentGroup;
     }
 
-    public void setWeekType(String weekType) {
-        this.weekType = weekType;
+    public void setStudentGroup(StudentGroup studentGroup) {
+        this.studentGroup = studentGroup;
     }
 
-    public String getSubgroup() {
-        return subgroup;
+    public TimeSlot getTimeSlot() {
+        return timeSlot;
     }
 
-    public void setSubgroup(String subgroup) {
-        this.subgroup = subgroup;
+    public void setTimeSlot(TimeSlot timeSlot) {
+        this.timeSlot = timeSlot;
+    }
+    
+    /**
+     * Verifica daca aceasta intrare este pentru un curs online
+     */
+    public boolean isOnlineCourse() {
+        return course instanceof OnlineCourse;
     }
 
-    public String getWeekRange() {
-        return weekRange;
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(course.getName()).append(" (").append(course.getType().getDisplayName()).append(")\n");
+        
+        if (room != null) {
+            sb.append("Sala: ").append(room.getRoomNumber()).append("\n");
+        } else if (isOnlineCourse()) {
+            OnlineCourse onlineCourse = (OnlineCourse) course;
+            sb.append("Curs Online: ").append(onlineCourse.getPlatformName()).append("\n");
+            sb.append("Link: ").append(onlineCourse.getMeetingLink()).append("\n");
+        } else {
+            sb.append("Locatie: Nespecificata\n");
+        }
+        
+        sb.append("Grupa: ").append(studentGroup.getName()).append("\n");
+        sb.append("Profesor: ").append(course.getProfessor().getName()).append("\n");
+        sb.append("Interval: ").append(timeSlot.toString());
+        
+        return sb.toString();
     }
-
-    public void setWeekRange(String weekRange) {
-        this.weekRange = weekRange;
-    }
-}
-
+} 

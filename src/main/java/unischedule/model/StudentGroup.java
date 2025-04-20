@@ -1,48 +1,76 @@
 package unischedule.model;
 
-public class StudentGroup {
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * grupa de studenti
+ */
+public class StudentGroup implements Schedulable {
+    private String name;
     private int year;
-    private int series;
-    private int groupNumber;
+    private int numberOfStudents;
+    private List<TimeSlot> bookedTimeSlots;
 
-    StudentGroup(int year, int series, int groupNumber) {
+    public StudentGroup() {
+        this.bookedTimeSlots = new ArrayList<>();
+    }
+
+    public StudentGroup(String name, int year, int numberOfStudents) {
+        this.name = name;
         this.year = year;
-        this.series = series;
-        this.groupNumber = groupNumber;
+        this.numberOfStudents = numberOfStudents;
+        this.bookedTimeSlots = new ArrayList<>();
     }
 
-    public StudentGroup(String name) {
-        String[] parts = name.split("\\D+");
-        if (parts.length != 3) {
-            throw new IllegalArgumentException("Invalid group name format");
-        }
-        this.year = Integer.parseInt(parts[0]);
-        this.series = Integer.parseInt(parts[1]);
-        this.groupNumber = Integer.parseInt(parts[2]);
+    public String getName() {
+        return name;
     }
 
-
-    private String getGroupName() {
-        return String.format("%d%d%d", year, series, groupNumber);
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getYear() {
         return year;
     }
-    public int getSeries() {
-        return series;
-    }
-    public int getGroupNumber() {
-        return groupNumber;
-    }
+
     public void setYear(int year) {
         this.year = year;
     }
-    public void setSeries(int series) {
-        this.series = series;
-    }
-    public void setGroupNumber(int groupNumber) {
-        this.groupNumber = groupNumber;
-    }
-}
 
+    public int getNumberOfStudents() {
+        return numberOfStudents;
+    }
+
+    public void setNumberOfStudents(int numberOfStudents) {
+        this.numberOfStudents = numberOfStudents;
+    }
+
+    public List<TimeSlot> getBookedTimeSlots() {
+        return bookedTimeSlots;
+    }
+
+    public void setBookedTimeSlots(List<TimeSlot> bookedTimeSlots) {
+        this.bookedTimeSlots = bookedTimeSlots;
+    }
+
+    public void bookTimeSlot(TimeSlot timeSlot) {
+        bookedTimeSlots.add(timeSlot);
+    }
+
+    @Override
+    public boolean isAvailable(TimeSlot timeSlot) {
+        for (TimeSlot bookedSlot : bookedTimeSlots) {
+            if (bookedSlot.overlaps(timeSlot)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Grupa " + name + " (Anul " + year + ", " + numberOfStudents + " studenti)";
+    }
+} 

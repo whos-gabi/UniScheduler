@@ -1,8 +1,5 @@
 package unischedule.model.enums;
 
-/**
- * Zilele saptamanii
- */
 public enum DayOfWeek {
     LUNI("Luni"),
     MARTI("Marti"),

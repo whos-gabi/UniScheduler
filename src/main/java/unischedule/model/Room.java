@@ -6,7 +6,7 @@ import java.util.List;
 import unischedule.model.enums.RoomType;
 
 /**
- * Reprezinta o sala din universitate
+ * sala din universitate
  */
 public class Room implements Schedulable {
     private String roomNumber;

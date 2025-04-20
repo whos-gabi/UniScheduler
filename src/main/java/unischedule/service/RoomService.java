@@ -40,7 +40,7 @@ public class RoomService {
                 .orElse(null);
     }
     
-    public List<Room> findRoomsByType(RoomType type) {
+    public List<Room> findRoomByType(RoomType type) {
         return rooms.stream()
                 .filter(r -> r.getType().equals(type))
                 .collect(Collectors.toList());
