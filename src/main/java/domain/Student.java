@@ -4,60 +4,32 @@ import java.util.Objects;
 
 /**
  * Represents a student in the university timetable system
+ * Extends Person to demonstrate inheritance
  */
-public class Student {
-    private String studentId;
-    private String firstName;
-    private String lastName;
-    private String email;
+public class Student extends Person {
     private int year;
     private String major;
     private String groupName;
 
-    public Student() {}
+    public Student() {
+        super();
+    }
 
     public Student(String studentId, String firstName, String lastName, String email, 
                   int year, String major, String groupName) {
-        this.studentId = studentId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        super(studentId, firstName, lastName, email);
         this.year = year;
         this.major = major;
         this.groupName = groupName;
     }
 
-    // Getters and Setters
+    // Getters and Setters for Student-specific fields
     public String getStudentId() {
-        return studentId;
+        return getId();
     }
 
     public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        setId(studentId);
     }
 
     public int getYear() {
@@ -84,8 +56,10 @@ public class Student {
         this.groupName = groupName;
     }
 
-    public String getFullName() {
-        return firstName + " " + lastName;
+    // Implementation of abstract method from Person
+    @Override
+    public String getRole() {
+        return "Student";
     }
 
     @Override
@@ -93,21 +67,21 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return Objects.equals(studentId, student.studentId);
+        return Objects.equals(getId(), student.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(studentId);
+        return Objects.hash(getId());
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "studentId='" + studentId + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
+                "studentId='" + getId() + '\'' +
+                ", firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'' +
+                ", email='" + getEmail() + '\'' +
                 ", year=" + year +
                 ", major='" + major + '\'' +
                 ", groupName='" + groupName + '\'' +

@@ -5,63 +5,40 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Represents a teacher/professor in the university timetable system
+ * Represents a teacher in the university timetable system
+ * Extends Person to demonstrate inheritance
  */
-public class Teacher {
-    private String teacherId;
-    private String firstName;
-    private String lastName;
-    private String email;
+public class Teacher extends Person {
     private String department;
-    private String title; // Professor, Associate Professor, Lecturer, etc.
+    private String title; // Professor, Associate Professor, etc.
+    private String officeNumber;
+    private String phoneNumber;
+    private String researchArea;
     private List<String> subjects; // Subjects the teacher can teach
 
     public Teacher() {
+        super();
         this.subjects = new ArrayList<>();
     }
 
-    public Teacher(String teacherId, String firstName, String lastName, String email, 
-                  String department, String title) {
-        this.teacherId = teacherId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+    public Teacher(String teacherId, String firstName, String lastName, String email,
+                  String department, String title, String officeNumber, String phoneNumber, String researchArea) {
+        super(teacherId, firstName, lastName, email);
         this.department = department;
         this.title = title;
+        this.officeNumber = officeNumber;
+        this.phoneNumber = phoneNumber;
+        this.researchArea = researchArea;
         this.subjects = new ArrayList<>();
     }
 
-    // Getters and Setters
+    // Getters and Setters for Teacher-specific fields
     public String getTeacherId() {
-        return teacherId;
+        return getId();
     }
 
     public void setTeacherId(String teacherId) {
-        this.teacherId = teacherId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        setId(teacherId);
     }
 
     public String getDepartment() {
@@ -78,6 +55,30 @@ public class Teacher {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getOfficeNumber() {
+        return officeNumber;
+    }
+
+    public void setOfficeNumber(String officeNumber) {
+        this.officeNumber = officeNumber;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getResearchArea() {
+        return researchArea;
+    }
+
+    public void setResearchArea(String researchArea) {
+        this.researchArea = researchArea;
     }
 
     public List<String> getSubjects() {
@@ -98,8 +99,10 @@ public class Teacher {
         subjects.remove(subject);
     }
 
-    public String getFullName() {
-        return firstName + " " + lastName;
+    // Implementation of abstract method from Person
+    @Override
+    public String getRole() {
+        return "Teacher";
     }
 
     @Override
@@ -107,23 +110,26 @@ public class Teacher {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Teacher teacher = (Teacher) o;
-        return Objects.equals(teacherId, teacher.teacherId);
+        return Objects.equals(getId(), teacher.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(teacherId);
+        return Objects.hash(getId());
     }
 
     @Override
     public String toString() {
         return "Teacher{" +
-                "teacherId='" + teacherId + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
+                "teacherId='" + getId() + '\'' +
+                ", firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'' +
+                ", email='" + getEmail() + '\'' +
                 ", department='" + department + '\'' +
                 ", title='" + title + '\'' +
+                ", officeNumber='" + officeNumber + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", researchArea='" + researchArea + '\'' +
                 ", subjects=" + subjects +
                 '}';
     }
