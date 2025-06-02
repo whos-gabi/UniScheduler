@@ -4,22 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="774be6d4-a383-4617-99b2-de3259031dd4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/resources/data/input1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/Professor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/ScheduleEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/StudentGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/Timetable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/enums/RoomType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/model/enums/WeekType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/service/TimetableService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/unischedule/util/JSONHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/output/sample.json" afterDir="false" />
+    <list default="true" id="774be6d4-a383-4617-99b2-de3259031dd4" name="Changes" comment="Initialized project">
+      <change beforePath="$PROJECT_DIR$/.idea/UniScheduler-TimetableSystem.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/src.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unischedule/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resources/data/input1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/model/Course.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/model/Professor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/model/ScheduleEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/model/StudentGroup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/model/TimeSlot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/model/Timetable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/model/enums/RoomType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/model/enums/WeekType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/service/TimetableService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unischedule/util/JSONHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Python Script" />
         <option value="Class" />
       </list>
     </option>
@@ -40,20 +44,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "whos-gabi"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;whos-gabi&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/whos-gabi/UniScheduler-TimetableSystem.git",
-    "accountId": "b1ea783e-0b37-474d-95a6-51704a8e2857"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/whos-gabi/UniScheduler-TimetableSystem.git&quot;,
+    &quot;accountId&quot;: &quot;b1ea783e-0b37-474d-95a6-51704a8e2857&quot;
   }
-}]]></component>
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="3HlRy04X" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -64,29 +75,103 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/thecyberbro/IdeaProjects/UniScheduler-TimetableSystem",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
-    "org.rust.first.attach.projects": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ClientApp (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Application.ClientApp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/thecyberbro/IdeaProjects/UniScheduler-TimetableSystem&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/resources/data" />
       <recent name="$PROJECT_DIR$/src/main/java/resources" />
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ClientApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="homebrew-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="view.ClientApp" />
+      <module name="university-timetable-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="UniScheduler-TimetableSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="UniScheduler-TimetableSystem" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="UniScheduler-TimetableSystem" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="UniScheduler-TimetableSystem" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ClientApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
@@ -108,7 +193,10 @@
       <option name="presentableId" value="Default" />
       <updated>1741963765086</updated>
       <workItem from="1741963766281" duration="1560000" />
-      <workItem from="1745077331891" duration="8268000" />
+      <workItem from="1745077331891" duration="18706000" />
+      <workItem from="1745180943925" duration="44000" />
+      <workItem from="1748805832300" duration="5360000" />
+      <workItem from="1748813228836" duration="3211000" />
     </task>
     <task id="LOCAL-00001" summary="Initialized project">
       <option name="closed" value="true" />
@@ -118,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741963943038</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initialized project">
+      <option name="closed" value="true" />
+      <created>1745155244710</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745155244710</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
