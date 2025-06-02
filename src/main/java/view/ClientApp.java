@@ -29,19 +29,16 @@ public class ClientApp {
                 ------------------------------------------------------------------------------
                 Welcome to University Timetable Management System (UTMS)
                 What do you want to do?
-                1. Add Student
-                2. Show All Students
-                3. Find Student by ID
-                4. Show Students by Group
-                5. Add Teacher
-                6. Show All Teachers
-                7. Add Course
-                8. Show All Courses
-                9. Add Room
-                10. Show All Rooms
-                11. View Timetable by Group
-                12. View Timetable by Teacher
-                13. View Timetable by Room
+                1. Manage Students (Add/View/Search)
+                2. Manage Teachers (Add/View)
+                3. Load and View Courses from Curriculum
+                4. Manage Rooms (Add/View)
+                5. Create Timetable Entry
+                6. Generate Timetable for Student Group
+                7. Generate Timetable for Teacher
+                8. Generate Timetable for Room
+                9. View All Timetable Entries
+                10. Generate Schedule Image (JSON Export)
                 0. Exit
                 """);
     }
@@ -53,77 +50,56 @@ public class ClientApp {
     private void execute(int option) {
         switch (option) {
             case 1: {
-                // Add student
-                Student student = userInteraction.readStudentDetails();
-                timetableController.addStudent(student);
+                // Manage Students (Add/View/Search)
+                studentManagementMenu();
                 break;
             }
             case 2: {
-                // Show all students
-                timetableController.listAllStudents();
+                // Manage Teachers (Add/View)
+                teacherManagementMenu();
                 break;
             }
             case 3: {
-                // Find student by ID
-                String studentId = userInteraction.inputStudentId();
-                timetableController.findStudentById(studentId);
+                // Load and View Courses from Curriculum
+                courseManagementMenu();
                 break;
             }
             case 4: {
-                // Show students by group
-                String groupName = userInteraction.inputGroupName();
-                timetableController.listStudentsByGroup(groupName);
+                // Manage Rooms (Add/View)
+                roomManagementMenu();
                 break;
             }
             case 5: {
-                // Add teacher
-                Teacher teacher = userInteraction.readTeacherDetails();
-                timetableController.addTeacher(teacher);
+                // Create Timetable Entry
+                createTimetableEntry();
                 break;
             }
             case 6: {
-                // Show all teachers
-                timetableController.listAllTeachers();
-                break;
-            }
-            case 7: {
-                // Add course
-                Course course = userInteraction.readCourseDetails();
-                timetableController.addCourse(course);
-                break;
-            }
-            case 8: {
-                // Show all courses
-                timetableController.listAllCourses();
-                break;
-            }
-            case 9: {
-                // Add room
-                Room room = userInteraction.readRoomDetails();
-                timetableController.addRoom(room);
-                break;
-            }
-            case 10: {
-                // Show all rooms
-                timetableController.listAllRooms();
-                break;
-            }
-            case 11: {
-                // View timetable by group
+                // Generate Timetable for Student Group
                 String groupName = userInteraction.inputGroupName();
                 timetableController.viewTimetableByGroup(groupName);
                 break;
             }
-            case 12: {
-                // View timetable by teacher
+            case 7: {
+                // Generate Timetable for Teacher
                 String teacherId = userInteraction.inputTeacherId();
                 timetableController.viewTimetableByTeacher(teacherId);
                 break;
             }
-            case 13: {
-                // View timetable by room
+            case 8: {
+                // Generate Timetable for Room
                 String roomId = userInteraction.inputRoomId();
                 timetableController.viewTimetableByRoom(roomId);
+                break;
+            }
+            case 9: {
+                // View All Timetable Entries
+                timetableController.listAllTimetableEntries();
+                break;
+            }
+            case 10: {
+                // Generate Schedule Image (JSON Export)
+                scheduleImageExportMenu();
                 break;
             }
             case 0: {
@@ -133,6 +109,156 @@ public class ClientApp {
             default: {
                 System.out.println("Invalid option! Please try again.");
             }
+        }
+    }
+
+    // Sub-menu methods for consolidated functionality
+    private void studentManagementMenu() {
+        System.out.println("""
+                Student Management:
+                1. Add Student
+                2. Show All Students  
+                3. Find Student by ID
+                4. Show Students by Group
+                """);
+        System.out.print("Choose option: ");
+        int choice = userInteraction.readSimpleInt();
+        
+        switch (choice) {
+            case 1: {
+                Student student = userInteraction.readStudentDetails();
+                timetableController.addStudent(student);
+                break;
+            }
+            case 2: {
+                timetableController.listAllStudents();
+                break;
+            }
+            case 3: {
+                String studentId = userInteraction.inputStudentId();
+                timetableController.findStudentById(studentId);
+                break;
+            }
+            case 4: {
+                String groupName = userInteraction.inputGroupName();
+                timetableController.listStudentsByGroup(groupName);
+                break;
+            }
+            default:
+                System.out.println("Invalid choice!");
+        }
+    }
+
+    private void teacherManagementMenu() {
+        System.out.println("""
+                Teacher Management:
+                1. Add Teacher
+                2. Show All Teachers
+                """);
+        System.out.print("Choose option: ");
+        int choice = userInteraction.readSimpleInt();
+        
+        switch (choice) {
+            case 1: {
+                Teacher teacher = userInteraction.readTeacherDetails();
+                timetableController.addTeacher(teacher);
+                break;
+            }
+            case 2: {
+                timetableController.listAllTeachers();
+                break;
+            }
+            default:
+                System.out.println("Invalid choice!");
+        }
+    }
+
+    private void courseManagementMenu() {
+        System.out.println("""
+                Course Management:
+                1. Load Courses from curriculum.json
+                2. Show All Loaded Courses
+                3. Add Custom Course
+                """);
+        System.out.print("Choose option: ");
+        int choice = userInteraction.readSimpleInt();
+        
+        switch (choice) {
+            case 1: {
+                timetableController.loadCoursesFromCurriculum();
+                break;
+            }
+            case 2: {
+                timetableController.listAllCourses();
+                break;
+            }
+            case 3: {
+                Course course = userInteraction.readCourseDetails();
+                timetableController.addCourse(course);
+                break;
+            }
+            default:
+                System.out.println("Invalid choice!");
+        }
+    }
+
+    private void roomManagementMenu() {
+        System.out.println("""
+                Room Management:
+                1. Add Room
+                2. Show All Rooms
+                """);
+        System.out.print("Choose option: ");
+        int choice = userInteraction.readSimpleInt();
+        
+        switch (choice) {
+            case 1: {
+                Room room = userInteraction.readRoomDetails();
+                timetableController.addRoom(room);
+                break;
+            }
+            case 2: {
+                timetableController.listAllRooms();
+                break;
+            }
+            default:
+                System.out.println("Invalid choice!");
+        }
+    }
+
+    private void createTimetableEntry() {
+        TimetableEntry entry = userInteraction.readTimetableEntryDetails();
+        timetableController.addTimetableEntry(entry);
+    }
+
+    private void scheduleImageExportMenu() {
+        System.out.println("""
+                Schedule Image Export:
+                1. Export Teacher Schedule
+                2. Export Student Group Schedule
+                3. Export Room Schedule
+                """);
+        System.out.print("Choose option: ");
+        int choice = userInteraction.readSimpleInt();
+        
+        switch (choice) {
+            case 1: {
+                String teacherId = userInteraction.inputTeacherId();
+                timetableController.exportTeacherScheduleAsJson(teacherId);
+                break;
+            }
+            case 2: {
+                String groupName = userInteraction.inputGroupName();
+                timetableController.exportGroupScheduleAsJson(groupName);
+                break;
+            }
+            case 3: {
+                String roomId = userInteraction.inputRoomId();
+                timetableController.exportRoomScheduleAsJson(roomId);
+                break;
+            }
+            default:
+                System.out.println("Invalid choice!");
         }
     }
 
@@ -149,7 +275,7 @@ public class ClientApp {
                 } catch (TimetableException exception) {
                     System.out.println("Invalid option! Try again!");
                 }
-            } while (option < 0 || option > 13);
+            } while (option < 0 || option > 10);
             return option;
         }
 
@@ -276,6 +402,34 @@ public class ClientApp {
             } else {
                 throw new TimetableException("Invalid number");
             }
+        }
+
+        private int readSimpleInt() {
+            int choice = -1;
+            do {
+                try {
+                    choice = readInt();
+                } catch (TimetableException exception) {
+                    System.out.println("Invalid input! Try again!");
+                }
+            } while (choice < 1 || choice > 4);
+            return choice;
+        }
+
+        TimetableEntry readTimetableEntryDetails() {
+            System.out.print("Timetable Entry ID: ");
+            String entryId = scanner.next();
+            System.out.print("Course ID: ");
+            String courseId = scanner.next();
+            System.out.print("Room ID: ");
+            String roomId = scanner.next();
+            System.out.print("Day of Week: ");
+            String dayOfWeek = scanner.next();
+            System.out.print("Start Time: ");
+            LocalTime startTime = LocalTime.parse(scanner.next());
+            System.out.print("End Time: ");
+            LocalTime endTime = LocalTime.parse(scanner.next());
+            return new TimetableEntry(entryId, courseId, roomId, dayOfWeek, startTime, endTime);
         }
     }
 } 
