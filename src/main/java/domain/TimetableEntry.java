@@ -21,6 +21,21 @@ public class TimetableEntry {
 
     public TimetableEntry() {}
 
+    // Backward-compatible constructor for ClientApp
+    public TimetableEntry(String entryId, String courseId, String roomId, 
+                         String dayOfWeek, LocalTime startTime, LocalTime endTime) {
+        this.entryId = entryId;
+        this.courseId = courseId;
+        this.teacherId = ""; // Default empty values
+        this.roomId = roomId;
+        this.groupName = "";
+        this.dayOfWeek = dayOfWeek;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.type = "Lecture"; // Default type
+        this.weekType = "ALL"; // Default week type
+    }
+
     public TimetableEntry(String entryId, String courseId, String teacherId, String roomId,
                          String groupName, String dayOfWeek, LocalTime startTime, LocalTime endTime,
                          String type, String weekType) {

@@ -1,0 +1,55 @@
+{
+  "name": "T003",
+  "type": "TEACHER",
+  "entries": [
+    {
+      "day": "Marți",
+      "time": "10:00 - 12:00",
+      "course": "C008",
+      "room": "R104",
+      "type": "Laborator"
+    },
+    {
+      "day": "Joi",
+      "time": "12:00 - 14:00",
+      "course": "C005",
+      "room": "R104",
+      "type": "Laborator"
+    },
+    {
+      "day": "Luni",
+      "time": "12:00 - 14:00",
+      "course": "C040",
+      "room": "R104",
+      "type": "Curs"
+    },
+    {
+      "day": "Joi",
+      "time": "08:00 - 10:00",
+      "course": "C037",
+      "room": "R104",
+      "type": "Curs"
+    },
+    {
+      "day": "Luni",
+      "time": "14:00 - 16:00",
+      "course": "C028",
+      "room": "R105",
+      "type": "Seminar"
+    },
+    {
+      "day": "Miercuri",
+      "time": "10:00 - 12:00",
+      "course": "C025",
+      "room": "R102",
+      "type": "Seminar"
+    },
+    {
+      "day": "Vineri",
+      "time": "12:00 - 14:00",
+      "course": "C022",
+      "room": "R105",
+      "type": "Seminar"
+    }
+  ]
+}

@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="774be6d4-a383-4617-99b2-de3259031dd4" name="Changes" comment="Initialized project" />
+    <list default="true" id="774be6d4-a383-4617-99b2-de3259031dd4" name="Changes" comment="Initialized project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit_log.csv" beforeDir="false" afterPath="$PROJECT_DIR$/audit_log.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TimetableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TimetableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/OnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/OnlineCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Schedule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Semester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/TimeSlot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/TimetableEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/TimetableEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/util/DatabaseConnectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/util/DatabaseConnectionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/TimetableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/TimetableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UniversityManagementService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/university_timetable.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/11university_timetable.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ClientApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/TimetableController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/TimetableController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/OnlineCourse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/OnlineCourse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/TimeSlot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/TimetableEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/TimetableEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/persistence/StudentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/StudentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/persistence/util/DatabaseConnectionUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/util/DatabaseConnectionUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/TimetableService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/TimetableService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/UniversityManagementService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/university_timetable.db" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,30 +87,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ClientApp (1).executor&quot;: &quot;Debug&quot;,
-    &quot;Application.ClientApp.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/thecyberbro/IdeaProjects/UniScheduler-TimetableSystem&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
-    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ClientApp (1).executor": "Debug",
+    "Application.ClientApp.executor": "Run",
+    "Application.DataPopulatorUtil.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/thecyberbro/IdeaProjects/UniScheduler-TimetableSystem",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "org.rust.first.attach.projects": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/resources/data" />
@@ -87,7 +119,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ClientApp">
     <configuration name="ClientApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="homebrew-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -96,6 +128,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataPopulatorUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="persistence.DataPopulatorUtil" />
+      <module name="university-timetable-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="persistence.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,6 +196,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ClientApp" />
+        <item itemvalue="Application.DataPopulatorUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +223,7 @@
       <workItem from="1745077331891" duration="18706000" />
       <workItem from="1745180943925" duration="44000" />
       <workItem from="1748805832300" duration="5360000" />
-      <workItem from="1748813228836" duration="3840000" />
+      <workItem from="1748813228836" duration="17833000" />
     </task>
     <task id="LOCAL-00001" summary="Initialized project">
       <option name="closed" value="true" />
@@ -204,5 +250,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialized project" />
     <option name="LAST_COMMIT_MESSAGE" value="Initialized project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/timetable_image_generator.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

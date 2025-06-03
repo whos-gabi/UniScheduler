@@ -1,16 +1,16 @@
 package controller;
 
 import domain.*;
-import service.TimetableService;
 import service.AuditService;
-import exceptions.TimetableException;
+import service.TimetableService;
 import java.util.List;
 
 /**
- * Controller class for handling timetable operations
- * Provides interface between view and service layers
+ * Main application controller for entity management operations
+ * Handles CRUD operations for students, teachers, courses, rooms, and timetable entries
  */
 public class TimetableController {
+    
     private final TimetableService timetableService = new TimetableService();
     private final AuditService auditService = AuditService.getInstance();
     
@@ -18,9 +18,9 @@ public class TimetableController {
     public void addStudent(Student student) {
         try {
             timetableService.addStudent(student);
-            System.out.println("Student added successfully: " + student);
+            System.out.println("Student added successfully: " + student.getFirstName() + " " + student.getLastName());
             auditService.logAction("Add Student");
-        } catch (TimetableException e) {
+        } catch (Exception e) {
             System.out.println("Error adding student: " + e.getMessage());
         }
     }
@@ -29,25 +29,25 @@ public class TimetableController {
         try {
             Student student = timetableService.findStudentById(studentId);
             if (student != null) {
-                System.out.println("Student found: " + student);
-                auditService.logAction("Find Student by ID");
+                System.out.println("Found student: " + student);
             } else {
                 System.out.println("Student not found with ID: " + studentId);
             }
+            auditService.logAction("Find Student by ID");
         } catch (Exception e) {
             System.out.println("Error finding student: " + e.getMessage());
         }
     }
     
     public void listAllStudents() {
-        System.out.println("Currently registered students:");
+        System.out.println("All students:");
         List<Student> students = timetableService.getAllStudents();
         if (students.isEmpty()) {
-            System.out.println("No students registered yet!");
+            System.out.println("No students found!");
         } else {
-            students.forEach(System.out::println);
+            students.forEach(student -> System.out.println(student.toString()));
         }
-        auditService.logAction("Show All Students");
+        auditService.logAction("List All Students");
     }
     
     public void listStudentsByGroup(String groupName) {
@@ -56,18 +56,18 @@ public class TimetableController {
         if (students.isEmpty()) {
             System.out.println("No students found in group: " + groupName);
         } else {
-            students.forEach(System.out::println);
+            students.forEach(student -> System.out.println(student.toString()));
         }
-        auditService.logAction("Show Students by Group");
+        auditService.logAction("List Students by Group");
     }
     
     // Teacher operations
     public void addTeacher(Teacher teacher) {
         try {
             timetableService.addTeacher(teacher);
-            System.out.println("Teacher added successfully: " + teacher);
+            System.out.println("Teacher added successfully: " + teacher.getFirstName() + " " + teacher.getLastName());
             auditService.logAction("Add Teacher");
-        } catch (TimetableException e) {
+        } catch (Exception e) {
             System.out.println("Error adding teacher: " + e.getMessage());
         }
     }
@@ -75,30 +75,31 @@ public class TimetableController {
     public void findTeacherById(String teacherId) {
         Teacher teacher = timetableService.findTeacherById(teacherId);
         if (teacher != null) {
-            System.out.println("Teacher found: " + teacher);
+            System.out.println("Found teacher: " + teacher);
         } else {
             System.out.println("Teacher not found with ID: " + teacherId);
         }
+        auditService.logAction("Find Teacher by ID");
     }
     
     public void listAllTeachers() {
-        System.out.println("Currently registered teachers:");
+        System.out.println("All teachers:");
         List<Teacher> teachers = timetableService.getAllTeachers();
         if (teachers.isEmpty()) {
-            System.out.println("No teachers registered yet!");
+            System.out.println("No teachers found!");
         } else {
-            teachers.forEach(System.out::println);
+            teachers.forEach(teacher -> System.out.println(teacher.toString()));
         }
-        auditService.logAction("Show All Teachers");
+        auditService.logAction("List All Teachers");
     }
     
     // Course operations
     public void addCourse(Course course) {
         try {
             timetableService.addCourse(course);
-            System.out.println("Course added successfully: " + course);
+            System.out.println("Course added successfully: " + course.getName());
             auditService.logAction("Add Course");
-        } catch (TimetableException e) {
+        } catch (Exception e) {
             System.out.println("Error adding course: " + e.getMessage());
         }
     }
@@ -106,30 +107,31 @@ public class TimetableController {
     public void findCourseById(String courseId) {
         Course course = timetableService.findCourseById(courseId);
         if (course != null) {
-            System.out.println("Course found: " + course);
+            System.out.println("Found course: " + course);
         } else {
             System.out.println("Course not found with ID: " + courseId);
         }
+        auditService.logAction("Find Course by ID");
     }
     
     public void listAllCourses() {
-        System.out.println("Currently registered courses:");
+        System.out.println("All courses:");
         List<Course> courses = timetableService.getAllCourses();
         if (courses.isEmpty()) {
-            System.out.println("No courses registered yet!");
+            System.out.println("No courses found!");
         } else {
-            courses.forEach(System.out::println);
+            courses.forEach(course -> System.out.println(course.toString()));
         }
-        auditService.logAction("Show All Courses");
+        auditService.logAction("List All Courses");
     }
     
     // Room operations
     public void addRoom(Room room) {
         try {
             timetableService.addRoom(room);
-            System.out.println("Room added successfully: " + room);
+            System.out.println("Room added successfully: " + room.getName());
             auditService.logAction("Add Room");
-        } catch (TimetableException e) {
+        } catch (Exception e) {
             System.out.println("Error adding room: " + e.getMessage());
         }
     }
@@ -137,68 +139,44 @@ public class TimetableController {
     public void findRoomById(String roomId) {
         Room room = timetableService.findRoomById(roomId);
         if (room != null) {
-            System.out.println("Room found: " + room);
+            System.out.println("Found room: " + room);
         } else {
             System.out.println("Room not found with ID: " + roomId);
         }
+        auditService.logAction("Find Room by ID");
     }
     
     public void listAllRooms() {
-        System.out.println("Currently registered rooms:");
+        System.out.println("All rooms:");
         List<Room> rooms = timetableService.getAllRooms();
         if (rooms.isEmpty()) {
-            System.out.println("No rooms registered yet!");
+            System.out.println("No rooms found!");
         } else {
-            rooms.forEach(System.out::println);
+            rooms.forEach(room -> System.out.println(room.toString()));
         }
-        auditService.logAction("Show All Rooms");
+        auditService.logAction("List All Rooms");
     }
     
-    // Timetable operations
+    // Timetable entry operations
     public void addTimetableEntry(TimetableEntry entry) {
         try {
             timetableService.addTimetableEntry(entry);
-            System.out.println("Timetable entry added successfully: " + entry);
-        } catch (TimetableException e) {
+            System.out.println("Timetable entry added successfully");
+            auditService.logAction("Add Timetable Entry");
+        } catch (Exception e) {
             System.out.println("Error adding timetable entry: " + e.getMessage());
         }
-    }
-    
-    public void viewTimetableByGroup(String groupName) {
-        System.out.println("Timetable for group " + groupName + ":");
-        List<TimetableEntry> entries = timetableService.getTimetableForGroup(groupName);
-        if (entries.isEmpty()) {
-            System.out.println("No timetable entries found for group: " + groupName);
-        } else {
-            entries.forEach(System.out::println);
-        }
-        auditService.logAction("View Timetable by Group");
-    }
-    
-    public void viewTimetableByTeacher(String teacherId) {
-        System.out.println("Timetable for teacher " + teacherId + ":");
-        List<TimetableEntry> entries = timetableService.getTimetableForTeacher(teacherId);
-        if (entries.isEmpty()) {
-            System.out.println("No timetable entries found for teacher: " + teacherId);
-        } else {
-            entries.forEach(System.out::println);
-        }
-        auditService.logAction("View Timetable by Teacher");
-    }
-    
-    public void viewTimetableByRoom(String roomId) {
-        System.out.println("Timetable for room " + roomId + ":");
-        List<TimetableEntry> entries = timetableService.getTimetableForRoom(roomId);
-        if (entries.isEmpty()) {
-            System.out.println("No timetable entries found for room: " + roomId);
-        } else {
-            entries.forEach(System.out::println);
-        }
-        auditService.logAction("View Timetable by Room");
     }
     
     // Utility operations
     public List<String> getAllGroups() {
         return timetableService.getAllGroups();
+    }
+    
+    public void loadCoursesFromCurriculum() {
+        // Simplified: just show a message that courses can be added manually
+        System.out.println("Course loading simplified. Use 'Add Custom Course' to add courses manually.");
+        System.out.println("You can add courses with types: DF, DS, DC and exam types: E, V");
+        auditService.logAction("Load Courses Info");
     }
 } 

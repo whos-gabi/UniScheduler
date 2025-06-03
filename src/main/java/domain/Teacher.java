@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -11,25 +9,17 @@ import java.util.Objects;
 public class Teacher extends Person {
     private String department;
     private String title; // Professor, Associate Professor, etc.
-    private String officeNumber;
-    private String phoneNumber;
-    private String researchArea;
-    private List<String> subjects; // Subjects the teacher can teach
 
     public Teacher() {
         super();
-        this.subjects = new ArrayList<>();
     }
 
+    // Main constructor for teacher creation
     public Teacher(String teacherId, String firstName, String lastName, String email,
-                  String department, String title, String officeNumber, String phoneNumber, String researchArea) {
+                  String department, String title) {
         super(teacherId, firstName, lastName, email);
         this.department = department;
         this.title = title;
-        this.officeNumber = officeNumber;
-        this.phoneNumber = phoneNumber;
-        this.researchArea = researchArea;
-        this.subjects = new ArrayList<>();
     }
 
     // Getters and Setters for Teacher-specific fields
@@ -55,48 +45,6 @@ public class Teacher extends Person {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getOfficeNumber() {
-        return officeNumber;
-    }
-
-    public void setOfficeNumber(String officeNumber) {
-        this.officeNumber = officeNumber;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getResearchArea() {
-        return researchArea;
-    }
-
-    public void setResearchArea(String researchArea) {
-        this.researchArea = researchArea;
-    }
-
-    public List<String> getSubjects() {
-        return subjects;
-    }
-
-    public void setSubjects(List<String> subjects) {
-        this.subjects = subjects;
-    }
-
-    public void addSubject(String subject) {
-        if (!subjects.contains(subject)) {
-            subjects.add(subject);
-        }
-    }
-
-    public void removeSubject(String subject) {
-        subjects.remove(subject);
     }
 
     // Implementation of abstract method from Person
@@ -127,10 +75,6 @@ public class Teacher extends Person {
                 ", email='" + getEmail() + '\'' +
                 ", department='" + department + '\'' +
                 ", title='" + title + '\'' +
-                ", officeNumber='" + officeNumber + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", researchArea='" + researchArea + '\'' +
-                ", subjects=" + subjects +
                 '}';
     }
 } 

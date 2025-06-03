@@ -22,13 +22,13 @@ public class StudentRepository implements GenericRepository<Student> {
     private final Map<String, Student> storage = new HashMap<>();
     
     private static final String INSERT_STUDENT_SQL = 
-        "INSERT INTO students(student_id, first_name, last_name, email, year, major, group_name) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        "INSERT INTO students(student_id, first_name, last_name, email, year, group_name) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String UPDATE_STUDENT_SQL = 
-        "UPDATE students SET first_name=?, last_name=?, email=?, year=?, major=?, group_name=? WHERE student_id=?";
+        "UPDATE students SET first_name=?, last_name=?, email=?, year=?, group_name=? WHERE student_id=?";
     private static final String DELETE_STUDENT_SQL = 
         "DELETE FROM students WHERE student_id=?";
     private static final String FIND_STUDENT_BY_ID_SQL = 
-        "SELECT student_id, first_name, last_name, email, year, major, group_name FROM students WHERE student_id=?";
+        "SELECT student_id, first_name, last_name, email, year, group_name FROM students WHERE student_id=?";
     private static final String FIND_ALL_STUDENTS_SQL = 
         "SELECT * FROM students";
     private static final String FIND_STUDENTS_BY_GROUP_SQL = 
@@ -60,8 +60,7 @@ public class StudentRepository implements GenericRepository<Student> {
             prepareStatement.setString(3, entity.getLastName());
             prepareStatement.setString(4, entity.getEmail());
             prepareStatement.setInt(5, entity.getYear());
-            prepareStatement.setString(6, entity.getMajor());
-            prepareStatement.setString(7, entity.getGroupName());
+            prepareStatement.setString(6, entity.getGroupName());
             prepareStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error saving student: " + e.getMessage(), e);
@@ -101,9 +100,8 @@ public class StudentRepository implements GenericRepository<Student> {
             preparedStatement.setString(2, entity.getLastName());
             preparedStatement.setString(3, entity.getEmail());
             preparedStatement.setInt(4, entity.getYear());
-            preparedStatement.setString(5, entity.getMajor());
-            preparedStatement.setString(6, entity.getGroupName());
-            preparedStatement.setString(7, entity.getStudentId());
+            preparedStatement.setString(5, entity.getGroupName());
+            preparedStatement.setString(6, entity.getStudentId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error updating student: " + e.getMessage(), e);
@@ -153,9 +151,8 @@ public class StudentRepository implements GenericRepository<Student> {
         String lastName = resultSet.getString("last_name");
         String email = resultSet.getString("email");
         int year = resultSet.getInt("year");
-        String major = resultSet.getString("major");
         String groupName = resultSet.getString("group_name");
         
-        return new Student(studentId, firstName, lastName, email, year, major, groupName);
+        return new Student(studentId, firstName, lastName, email, year, groupName);
     }
 } 

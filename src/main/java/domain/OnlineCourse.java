@@ -16,10 +16,9 @@ public class OnlineCourse extends Course {
         super();
     }
 
-    public OnlineCourse(String courseId, String name, String description, int credits,
-                       String department, int year, String semester,
+    public OnlineCourse(String courseId, String name, int credits, int year, String semester,
                        String platform, String meetingUrl, String meetingId) {
-        super(courseId, name, description, credits, department, year, semester);
+        super(courseId, name, credits, year, semester);
         this.platform = platform;
         this.meetingUrl = meetingUrl;
         this.meetingId = meetingId;
@@ -82,9 +81,7 @@ public class OnlineCourse extends Course {
         return "OnlineCourse{" +
                 "courseId='" + getCourseId() + '\'' +
                 ", name='" + getName() + '\'' +
-                ", description='" + getDescription() + '\'' +
                 ", credits=" + getCredits() +
-                ", department='" + getDepartment() + '\'' +
                 ", year=" + getYear() +
                 ", semester='" + getSemester() + '\'' +
                 ", lectureHours=" + getLectureHours() +

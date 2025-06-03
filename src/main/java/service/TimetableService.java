@@ -3,6 +3,10 @@ package service;
 import domain.*;
 import exceptions.TimetableException;
 import persistence.StudentRepository;
+import persistence.TimetableEntryRepository;
+import persistence.TeacherRepository;
+import persistence.CourseRepository;
+import persistence.RoomRepository;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -12,26 +16,15 @@ import java.util.stream.Collectors;
  */
 public class TimetableService {
     
-    // Repository dependencies - using singleton pattern
+    // Database repositories
     private final StudentRepository studentRepository = StudentRepository.getInstance();
-    
-    // In-memory collections for entities not yet implemented with database
-    private List<Teacher> teachers;
-    private List<Course> courses;
-    private List<Room> rooms;
-    private List<TimetableEntry> timetableEntries;
-    
-    // Sorted collections for efficient searching
-    private TreeMap<String, List<TimetableEntry>> timetableByGroup;
+    private final TimetableEntryRepository timetableEntryRepository = TimetableEntryRepository.getInstance();
+    private final TeacherRepository teacherRepository = TeacherRepository.getInstance();
+    private final CourseRepository courseRepository = CourseRepository.getInstance();
+    private final RoomRepository roomRepository = RoomRepository.getInstance();
 
     public TimetableService() {
-        this.teachers = new ArrayList<>();
-        this.courses = new ArrayList<>();
-        this.rooms = new ArrayList<>();
-        this.timetableEntries = new ArrayList<>();
-        
-        // Initialize sorted collections
-        this.timetableByGroup = new TreeMap<>();
+        // All data now managed by repositories
     }
 
     // Student management operations - using database
@@ -81,7 +74,7 @@ public class TimetableService {
         studentRepository.delete(student.get());
     }
 
-    // Teacher management operations - in-memory for now
+    // Teacher management operations - using database
     public void addTeacher(Teacher teacher) throws TimetableException {
         if (teacher == null || teacher.getTeacherId() == null) {
             throw new TimetableException("Teacher or teacher ID cannot be null");
@@ -89,21 +82,18 @@ public class TimetableService {
         if (findTeacherById(teacher.getTeacherId()) != null) {
             throw new TimetableException("Teacher with ID " + teacher.getTeacherId() + " already exists");
         }
-        teachers.add(teacher);
+        teacherRepository.save(teacher);
     }
 
     public Teacher findTeacherById(String teacherId) {
-        return teachers.stream()
-                .filter(t -> t.getTeacherId().equals(teacherId))
-                .findFirst()
-                .orElse(null);
+        return teacherRepository.findById(teacherId).orElse(null);
     }
 
     public List<Teacher> getAllTeachers() {
-        return new ArrayList<>(teachers);
+        return teacherRepository.findAll();
     }
 
-    // Course management operations - in-memory for now  
+    // Course management operations - using database  
     public void addCourse(Course course) throws TimetableException {
         if (course == null || course.getCourseId() == null) {
             throw new TimetableException("Course or course ID cannot be null");
@@ -111,27 +101,22 @@ public class TimetableService {
         if (findCourseById(course.getCourseId()) != null) {
             throw new TimetableException("Course with ID " + course.getCourseId() + " already exists");
         }
-        courses.add(course);
+        courseRepository.save(course);
     }
 
     public Course findCourseById(String courseId) {
-        return courses.stream()
-                .filter(c -> c.getCourseId().equals(courseId))
-                .findFirst()
-                .orElse(null);
+        return courseRepository.findById(courseId).orElse(null);
     }
 
     public List<Course> getAllCourses() {
-        return new ArrayList<>(courses);
+        return courseRepository.findAll();
     }
 
     public List<Course> getCoursesByYear(int year) {
-        return courses.stream()
-                .filter(c -> c.getYear() == year)
-                .collect(Collectors.toList());
+        return courseRepository.findByYear(year);
     }
 
-    // Room management operations - in-memory for now
+    // Room management operations - using database
     public void addRoom(Room room) throws TimetableException {
         if (room == null || room.getRoomId() == null) {
             throw new TimetableException("Room or room ID cannot be null");
@@ -139,21 +124,18 @@ public class TimetableService {
         if (findRoomById(room.getRoomId()) != null) {
             throw new TimetableException("Room with ID " + room.getRoomId() + " already exists");
         }
-        rooms.add(room);
+        roomRepository.save(room);
     }
 
     public Room findRoomById(String roomId) {
-        return rooms.stream()
-                .filter(r -> r.getRoomId().equals(roomId))
-                .findFirst()
-                .orElse(null);
+        return roomRepository.findById(roomId).orElse(null);
     }
 
     public List<Room> getAllRooms() {
-        return new ArrayList<>(rooms);
+        return roomRepository.findAll();
     }
 
-    // Timetable management operations - in-memory for now
+    // Timetable management operations - using database
     public void addTimetableEntry(TimetableEntry entry) throws TimetableException {
         if (entry == null) {
             throw new TimetableException("Timetable entry cannot be null");
@@ -170,30 +152,37 @@ public class TimetableService {
             throw new TimetableException("Room with ID " + entry.getRoomId() + " does not exist");
         }
         
-        timetableEntries.add(entry);
-        
-        // Update sorted collection
-        timetableByGroup.computeIfAbsent(entry.getGroupName(), k -> new ArrayList<>()).add(entry);
+        timetableEntryRepository.save(entry);
     }
 
     public List<TimetableEntry> getTimetableForGroup(String groupName) {
-        return timetableByGroup.getOrDefault(groupName, new ArrayList<>());
+        return timetableEntryRepository.findByGroupName(groupName);
     }
 
     public List<TimetableEntry> getTimetableForTeacher(String teacherId) {
-        return timetableEntries.stream()
-                .filter(e -> e.getTeacherId().equals(teacherId))
-                .collect(Collectors.toList());
+        return timetableEntryRepository.findByTeacherId(teacherId);
     }
 
     public List<TimetableEntry> getTimetableForRoom(String roomId) {
-        return timetableEntries.stream()
-                .filter(e -> e.getRoomId().equals(roomId))
-                .collect(Collectors.toList());
+        return timetableEntryRepository.findByRoomId(roomId);
     }
 
     public List<TimetableEntry> getAllTimetableEntries() {
-        return new ArrayList<>(timetableEntries);
+        return timetableEntryRepository.findAll();
+    }
+
+    public void removeTimetableEntry(TimetableEntry entry) throws TimetableException {
+        if (entry == null) {
+            throw new TimetableException("Timetable entry cannot be null");
+        }
+        timetableEntryRepository.delete(entry);
+    }
+
+    public void clearAllTimetableEntries() {
+        List<TimetableEntry> allEntries = getAllTimetableEntries();
+        for (TimetableEntry entry : allEntries) {
+            timetableEntryRepository.delete(entry);
+        }
     }
 
     // Utility methods

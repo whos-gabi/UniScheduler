@@ -7,19 +7,17 @@ import java.util.Objects;
  * Extends Person to demonstrate inheritance
  */
 public class Student extends Person {
-    private int year;
-    private String major;
-    private String groupName;
+    private int year; // Study year (1-4)
+    private String groupName; // Student group
 
     public Student() {
         super();
     }
 
     public Student(String studentId, String firstName, String lastName, String email, 
-                  int year, String major, String groupName) {
+                  int year, String groupName) {
         super(studentId, firstName, lastName, email);
         this.year = year;
-        this.major = major;
         this.groupName = groupName;
     }
 
@@ -38,14 +36,6 @@ public class Student extends Person {
 
     public void setYear(int year) {
         this.year = year;
-    }
-
-    public String getMajor() {
-        return major;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
     }
 
     public String getGroupName() {
@@ -83,7 +73,6 @@ public class Student extends Person {
                 ", lastName='" + getLastName() + '\'' +
                 ", email='" + getEmail() + '\'' +
                 ", year=" + year +
-                ", major='" + major + '\'' +
                 ", groupName='" + groupName + '\'' +
                 '}';
     }

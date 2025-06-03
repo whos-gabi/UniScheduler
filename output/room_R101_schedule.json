@@ -1,0 +1,38 @@
+{
+  "name": "R101",
+  "type": "ROOM",
+  "entries": [
+    {
+      "day": "Luni",
+      "time": "08:00 - 10:00",
+      "course": "C001",
+      "teacher": "T003",
+      "group": "1A",
+      "type": "Curs"
+    },
+    {
+      "day": "Miercuri",
+      "time": "08:00 - 10:00",
+      "course": "C005",
+      "teacher": "T005",
+      "group": "1A",
+      "type": "Curs"
+    },
+    {
+      "day": "Luni",
+      "time": "12:00 - 14:00",
+      "course": "C017",
+      "teacher": "T003",
+      "group": "2A",
+      "type": "Curs"
+    },
+    {
+      "day": "Joi",
+      "time": "10:00 - 12:00",
+      "course": "C028",
+      "teacher": "T002",
+      "group": "3A",
+      "type": "Curs"
+    }
+  ]
+}

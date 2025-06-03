@@ -70,7 +70,6 @@ public class DatabaseConnectionUtil {
                     last_name TEXT NOT NULL,
                     email TEXT,
                     year INTEGER NOT NULL,
-                    major TEXT NOT NULL,
                     group_name TEXT NOT NULL
                 )
             """);
@@ -83,26 +82,44 @@ public class DatabaseConnectionUtil {
                     last_name TEXT NOT NULL,
                     email TEXT,
                     department TEXT NOT NULL,
-                    title TEXT NOT NULL
+                    title TEXT NOT NULL,
+                    office_number TEXT,
+                    phone_number TEXT,
+                    research_area TEXT
                 )
             """);
 
-            // Courses table
+            // Courses table with curriculum data
             statement.execute("""
                 CREATE TABLE IF NOT EXISTS courses (
                     course_id TEXT PRIMARY KEY,
                     name TEXT NOT NULL,
-                    description TEXT,
                     credits INTEGER NOT NULL,
-                    department TEXT NOT NULL,
                     year INTEGER NOT NULL,
                     semester TEXT NOT NULL,
+                    course_type TEXT DEFAULT 'DS',
+                    exam_type TEXT DEFAULT 'E',
                     lecture_hours INTEGER DEFAULT 0,
                     seminar_hours INTEGER DEFAULT 0,
                     lab_hours INTEGER DEFAULT 0,
                     project_hours INTEGER DEFAULT 0
                 )
             """);
+
+            // Remove obsolete columns from existing courses table
+            try {
+                statement.execute("ALTER TABLE courses DROP COLUMN description");
+                System.out.println("Removed description column from courses table");
+            } catch (SQLException e) {
+                // Column might not exist, ignore
+            }
+            
+            try {
+                statement.execute("ALTER TABLE courses DROP COLUMN department");
+                System.out.println("Removed department column from courses table");
+            } catch (SQLException e) {
+                // Column might not exist, ignore
+            }
 
             // Rooms table
             statement.execute("""
@@ -143,17 +160,6 @@ public class DatabaseConnectionUtil {
                     subject TEXT NOT NULL,
                     PRIMARY KEY (teacher_id, subject),
                     FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id)
-                )
-            """);
-
-            // Audit table for tracking operations
-            statement.execute("""
-                CREATE TABLE IF NOT EXISTS audit_log (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    action_name TEXT NOT NULL,
-                    timestamp TEXT NOT NULL,
-                    user_type TEXT,
-                    details TEXT
                 )
             """);
 

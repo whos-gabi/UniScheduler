@@ -1,0 +1,166 @@
+{
+  "name": "1A",
+  "type": "STUDENT_GROUP",
+  "entries": [
+    {
+      "day": "Luni",
+      "time": "08:00 - 10:00",
+      "course": "C009",
+      "teacher": "T006",
+      "room": "R107",
+      "type": "Curs"
+    },
+    {
+      "day": "Luni",
+      "time": "10:00 - 12:00",
+      "course": "C009",
+      "teacher": "T007",
+      "room": "R105",
+      "type": "Seminar"
+    },
+    {
+      "day": "Luni",
+      "time": "12:00 - 14:00",
+      "course": "C009",
+      "teacher": "T004",
+      "room": "R103",
+      "type": "Laborator"
+    },
+    {
+      "day": "Luni",
+      "time": "14:00 - 16:00",
+      "course": "C008",
+      "teacher": "T005",
+      "room": "R106",
+      "type": "Curs"
+    },
+    {
+      "day": "Marți",
+      "time": "08:00 - 10:00",
+      "course": "C008",
+      "teacher": "T002",
+      "room": "R102",
+      "type": "Seminar"
+    },
+    {
+      "day": "Marți",
+      "time": "10:00 - 12:00",
+      "course": "C008",
+      "teacher": "T003",
+      "room": "R104",
+      "type": "Laborator"
+    },
+    {
+      "day": "Marți",
+      "time": "12:00 - 14:00",
+      "course": "C007",
+      "teacher": "T099",
+      "room": "R101",
+      "type": "Curs"
+    },
+    {
+      "day": "Marți",
+      "time": "14:00 - 16:00",
+      "course": "C007",
+      "teacher": "T001",
+      "room": "R105",
+      "type": "Seminar"
+    },
+    {
+      "day": "Miercuri",
+      "time": "08:00 - 10:00",
+      "course": "C007",
+      "teacher": "T670",
+      "room": "R199",
+      "type": "Laborator"
+    },
+    {
+      "day": "Miercuri",
+      "time": "10:00 - 12:00",
+      "course": "C006",
+      "teacher": "T006",
+      "room": "R107",
+      "type": "Curs"
+    },
+    {
+      "day": "Miercuri",
+      "time": "12:00 - 14:00",
+      "course": "C006",
+      "teacher": "T007",
+      "room": "R102",
+      "type": "Seminar"
+    },
+    {
+      "day": "Miercuri",
+      "time": "14:00 - 16:00",
+      "course": "C006",
+      "teacher": "T004",
+      "room": "R103",
+      "type": "Laborator"
+    },
+    {
+      "day": "Joi",
+      "time": "08:00 - 10:00",
+      "course": "C005",
+      "teacher": "T005",
+      "room": "R106",
+      "type": "Curs"
+    },
+    {
+      "day": "Joi",
+      "time": "10:00 - 12:00",
+      "course": "C005",
+      "teacher": "T002",
+      "room": "R105",
+      "type": "Seminar"
+    },
+    {
+      "day": "Joi",
+      "time": "12:00 - 14:00",
+      "course": "C005",
+      "teacher": "T003",
+      "room": "R104",
+      "type": "Laborator"
+    },
+    {
+      "day": "Joi",
+      "time": "14:00 - 16:00",
+      "course": "C004",
+      "teacher": "T099",
+      "room": "R101",
+      "type": "Curs"
+    },
+    {
+      "day": "Vineri",
+      "time": "08:00 - 10:00",
+      "course": "C004",
+      "teacher": "T001",
+      "room": "R102",
+      "type": "Seminar"
+    },
+    {
+      "day": "Vineri",
+      "time": "10:00 - 12:00",
+      "course": "C004",
+      "teacher": "T670",
+      "room": "R199",
+      "type": "Laborator"
+    },
+    {
+      "day": "Vineri",
+      "time": "12:00 - 14:00",
+      "course": "C003",
+      "teacher": "T006",
+      "room": "R107",
+      "type": "Curs"
+    },
+    {
+      "day": "Vineri",
+      "time": "14:00 - 16:00",
+      "course": "C003",
+      "teacher": "T007",
+      "room": "R105",
+      "type": "Seminar"
+    }
+  ]
+}

@@ -1,10 +1,13 @@
 package view;
 
 import controller.TimetableController;
+import controller.ScheduleController;
 import domain.*;
 import exceptions.TimetableException;
 import java.time.LocalTime;
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Main client application for the University Timetable System
@@ -13,6 +16,7 @@ import java.util.Scanner;
 public class ClientApp {
     
     private final TimetableController timetableController = new TimetableController();
+    private final ScheduleController scheduleController = new ScheduleController();
     private final UserInteraction userInteraction = new UserInteraction();
     
     public static void main(String[] args) {
@@ -26,25 +30,33 @@ public class ClientApp {
     
     private void showMenu() {
         System.out.println("""
-                ------------------------------------------------------------------------------
-                Welcome to University Timetable Management System (UTMS)
-                What do you want to do?
-                1. Manage Students (Add/View/Search)
-                2. Manage Teachers (Add/View)
-                3. Load and View Courses from Curriculum
-                4. Manage Rooms (Add/View)
-                5. Create Timetable Entry
-                6. Generate Timetable for Student Group
-                7. Generate Timetable for Teacher
-                8. Generate Timetable for Room
-                9. View All Timetable Entries
-                10. Generate Schedule Image (JSON Export)
+                University Timetable Management System
+                ======================================
+                1. Student Management
+                2. Teacher Management
+                3. Course Management
+                4. Room Management
+                5. Generate Complete Schedule (Auto)
+                6. View Timetable by Group
+                7. View Timetable by Teacher
+                8. View Timetable by Room
+                9. List All Timetable Entries
+                10. Export Schedule Image
                 0. Exit
                 """);
+        System.out.print("Choose an option: ");
     }
     
     private int readOption() {
-        return userInteraction.readOption();
+        int option = -1;
+        do {
+            try {
+                option = userInteraction.readOption();
+            } catch (Exception exception) {
+                System.out.println("Invalid option! Try again!");
+            }
+        } while (option < 0 || option > 10);
+        return option;
     }
     
     private void execute(int option) {
@@ -70,31 +82,31 @@ public class ClientApp {
                 break;
             }
             case 5: {
-                // Create Timetable Entry
-                createTimetableEntry();
+                // Generate Complete Schedule Automatically
+                generateCompleteSchedule();
                 break;
             }
             case 6: {
                 // Generate Timetable for Student Group
                 String groupName = userInteraction.inputGroupName();
-                timetableController.viewTimetableByGroup(groupName);
+                scheduleController.viewTimetableByGroup(groupName);
                 break;
             }
             case 7: {
                 // Generate Timetable for Teacher
                 String teacherId = userInteraction.inputTeacherId();
-                timetableController.viewTimetableByTeacher(teacherId);
+                scheduleController.viewTimetableByTeacher(teacherId);
                 break;
             }
             case 8: {
                 // Generate Timetable for Room
                 String roomId = userInteraction.inputRoomId();
-                timetableController.viewTimetableByRoom(roomId);
+                scheduleController.viewTimetableByRoom(roomId);
                 break;
             }
             case 9: {
                 // View All Timetable Entries
-                timetableController.listAllTimetableEntries();
+                scheduleController.listAllTimetableEntries();
                 break;
             }
             case 10: {
@@ -176,25 +188,14 @@ public class ClientApp {
     private void courseManagementMenu() {
         System.out.println("""
                 Course Management:
-                1. Load Courses from curriculum.json
-                2. Show All Loaded Courses
-                3. Add Custom Course
+                1. Show All Courses
                 """);
         System.out.print("Choose option: ");
         int choice = userInteraction.readSimpleInt();
         
         switch (choice) {
             case 1: {
-                timetableController.loadCoursesFromCurriculum();
-                break;
-            }
-            case 2: {
                 timetableController.listAllCourses();
-                break;
-            }
-            case 3: {
-                Course course = userInteraction.readCourseDetails();
-                timetableController.addCourse(course);
                 break;
             }
             default:
@@ -226,9 +227,27 @@ public class ClientApp {
         }
     }
 
-    private void createTimetableEntry() {
-        TimetableEntry entry = userInteraction.readTimetableEntryDetails();
-        timetableController.addTimetableEntry(entry);
+    private void generateCompleteSchedule() {
+        System.out.println("=== Automatic Schedule Generation ===");
+        System.out.println("This will clear all existing timetable entries and generate a new complete schedule.");
+        System.out.print("Continue? (y/n): ");
+        
+        String confirmation = userInteraction.getConfirmation();
+        if (!confirmation.equalsIgnoreCase("y") && !confirmation.equalsIgnoreCase("yes")) {
+            System.out.println("Schedule generation cancelled.");
+            return;
+        }
+        
+        System.out.println("Generating complete schedule...");
+        
+        try {
+            // Call the schedule generation service
+            scheduleController.generateAutomaticSchedule();
+            System.out.println("✅ Complete schedule generated successfully!");
+            System.out.println("You can now view schedules by group, teacher, or room.");
+        } catch (Exception e) {
+            System.out.println("❌ Error generating schedule: " + e.getMessage());
+        }
     }
 
     private void scheduleImageExportMenu() {
@@ -244,17 +263,17 @@ public class ClientApp {
         switch (choice) {
             case 1: {
                 String teacherId = userInteraction.inputTeacherId();
-                timetableController.exportTeacherScheduleAsJson(teacherId);
+                scheduleController.exportTeacherScheduleAsJson(teacherId);
                 break;
             }
             case 2: {
                 String groupName = userInteraction.inputGroupName();
-                timetableController.exportGroupScheduleAsJson(groupName);
+                scheduleController.exportGroupScheduleAsJson(groupName);
                 break;
             }
             case 3: {
                 String roomId = userInteraction.inputRoomId();
-                timetableController.exportRoomScheduleAsJson(roomId);
+                scheduleController.exportRoomScheduleAsJson(roomId);
                 break;
             }
             default:
@@ -290,36 +309,40 @@ public class ClientApp {
             String email = scanner.next();
             System.out.print("Year (1-4): ");
             int year = readYear();
-            System.out.print("Major: ");
-            String major = scanner.next();
             System.out.print("Group Name: ");
             String groupName = scanner.next();
-            return new Student(studentId, firstName, lastName, email, year, major, groupName);
+            return new Student(studentId, firstName, lastName, email, year, groupName);
         }
 
         Teacher readTeacherDetails() {
+            scanner.nextLine(); // Clear any previous input
+            
             System.out.print("Teacher ID: ");
-            String teacherId = scanner.next();
-            System.out.print("First Name: ");
-            String firstName = scanner.next();
-            System.out.print("Last Name: ");
-            String lastName = scanner.next();
+            String teacherId = scanner.nextLine().trim();
+            
+            System.out.print("First Name (can contain spaces): ");
+            String firstName = scanner.nextLine().trim();
+            
+            System.out.print("Last Name (can contain spaces): ");
+            String lastName = scanner.nextLine().trim();
+            
             System.out.print("Email: ");
-            String email = scanner.next();
+            String email = scanner.nextLine().trim();
+            
             System.out.print("Department: ");
-            String department = scanner.next();
-            System.out.print("Title: ");
-            String title = scanner.next();
+            String department = scanner.nextLine().trim();
+            
+            System.out.print("Title (Professor, Associate Professor, etc.): ");
+            String title = scanner.nextLine().trim();
+            
             return new Teacher(teacherId, firstName, lastName, email, department, title);
         }
-
+        
         Course readCourseDetails() {
             System.out.print("Course ID: ");
             String courseId = scanner.next();
             System.out.print("Course Name: ");
             String name = scanner.next();
-            System.out.print("Description: ");
-            String description = scanner.next();
             System.out.print("Credits: ");
             int credits = -1;
             do {
@@ -329,13 +352,11 @@ public class ClientApp {
                     System.out.println("Invalid input for credits! Try again!");
                 }
             } while (credits <= 0);
-            System.out.print("Department: ");
-            String department = scanner.next();
             System.out.print("Year (1-4): ");
             int year = readYear();
             System.out.print("Semester: ");
             String semester = scanner.next();
-            return new Course(courseId, name, description, credits, department, year, semester);
+            return new Course(courseId, name, credits, year, semester);
         }
 
         Room readRoomDetails() {
@@ -430,6 +451,10 @@ public class ClientApp {
             System.out.print("End Time: ");
             LocalTime endTime = LocalTime.parse(scanner.next());
             return new TimetableEntry(entryId, courseId, roomId, dayOfWeek, startTime, endTime);
+        }
+
+        String getConfirmation() {
+            return scanner.next();
         }
     }
 } 
